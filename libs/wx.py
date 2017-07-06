@@ -23,11 +23,6 @@ def publish(uuid, **kw):
          sse.publish(params, type='login')
 
 
-def send_notify():
-     from app import app
-     with app.app_context():
-          sse.publish(params, type='login')
-
 scan_qr_code.connect(publish)
 confirm_login.connect(publish)
 logout.connect(publish)
